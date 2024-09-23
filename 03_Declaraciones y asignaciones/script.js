@@ -19,7 +19,7 @@ const datoQueVienDeLaClinte = "datos";
 function nomberDeFuncion() {
   const nombreVariable = "Varible dentro de Funcion";
 };
-// Como  se declaran las variables dentro de una funcion
+// Como se declaran las variables dentro de una funcion
 
 
 

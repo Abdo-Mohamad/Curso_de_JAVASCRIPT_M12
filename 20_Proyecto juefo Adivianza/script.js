@@ -4,9 +4,13 @@ let numeroAzar = Math.floor(Math.random() * 100) + 1; //  Genera un número alea
 
 let numeroEntrada = document.getElementById("numeroEntrada"); //  Obtiene el elemento con el id "numeroEntrada"
 let mensaje = document.getElementById("mensaje"); //  Obtiene el elemento con el id "mensaje"
+let intento = document.getElementById("intento");
+let intentos = 0;
 
 // Esta acción se va a ejecutar cuando se  presione el botón de chequear
 function chrquearResultado() {
+  intentos++;
+  intento.textContent = intentos;
   let numeroIngresado = parseInt(numeroEntrada.value);
 
   if (numeroIngresado < 1 || numeroIngresado > 100 || isNaN(numeroIngresado)) {

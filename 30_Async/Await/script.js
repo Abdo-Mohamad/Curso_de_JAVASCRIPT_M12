@@ -1,4 +1,4 @@
-// Async & Await
+// promesa
 
 /* let promesa = new Promise((resolve, reject) => {
   let resp = {
@@ -48,14 +48,24 @@ let promesa3 = new Promise((resolve) => {
     resolve(resp);
   }, 2500);
 });
-
-async function ejecutarPromesas() {
-  let respuestaProm1 = await promesa1;
-  console.log(respuestaProm1);
-  let respuestaProm2 = await promesa2;
-  console.log(respuestaProm2);
-  let respuestaProm3 = await promesa3;
-  console.log(respuestaProm3);
-}
-
-ejecutarPromesas();
+promesa1
+  .then((res) => {
+    console.log(res);
+    promesa2
+      .then((res) => {
+        console.log(res.descripption);
+        promesa3
+          .then((res) => {
+            console.log(res.descripption);
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+  })
+  .catch((error) => {
+    console.warn(error);
+  });
